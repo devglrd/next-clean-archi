@@ -10,9 +10,8 @@ import {toast} from "sonner";
 import {z} from "zod";
 import {useForm} from "react-hook-form";
 import {zodResolver} from "@hookform/resolvers/zod";
-import {Form, FormControl, FormField, FormItem, FormLabel, FormMessage} from "@/app/_components/ui/form";
+import {Form, FormControl, FormField, FormItem, FormMessage} from "@/app/_components/ui/form";
 import {Button} from "@/app/_components/ui/button";
-import {Textarea} from "@/app/_components/ui/textarea";
 import {addTodosSchema} from "@/app/todos/schema";
 import {Input} from "@/app/_components/ui/input";
 
