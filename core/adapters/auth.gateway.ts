@@ -7,8 +7,8 @@ import {DI_SYMBOLS} from "@/di/types";
 import {luciaAdapter} from "@/drizzle";
 import {SESSION_COOKIE} from "@/config";
 import {UnauthenticatedError} from "@/core/entities/errors/auth";
-import {IAuthenticationService} from "@/core/ports/authentication.interface";
 import { type IUsersRepository} from "@/core/ports/user.interface";
+import {IAuthenticationService} from "@/core/ports/auth.interface";
 
 @injectable()
 export class AuthenticationService implements IAuthenticationService {
