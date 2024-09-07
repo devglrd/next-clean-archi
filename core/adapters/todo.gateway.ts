@@ -1,9 +1,9 @@
-import {ITodosRepository} from "@/src/application/repositories/todo.interface";
 import {injectable} from "inversify";
-import {Todo, TodoInsert} from "@/src/entities/models/todo";
+import {Todo, TodoInsert} from "@/core/entities/models/todo";
 import {db} from "@/drizzle";
 import {eq} from "drizzle-orm";
 import {todos} from "@/drizzle/schema";
+import {ITodosRepository} from "@/core/ports/todo.interface";
 
 @injectable()
 export class TodosRepository implements ITodosRepository {

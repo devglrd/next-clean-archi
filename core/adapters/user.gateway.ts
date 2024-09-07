@@ -1,10 +1,10 @@
 import {injectable} from "inversify";
-import {IUsersRepository} from "@/src/application/repositories/user.interface";
-import type {User} from "@/src/entities/models/user";
+import type {User} from "@/core/entities/models/user";
 import {db} from "@/drizzle";
 import {users} from "@/drizzle/schema";
 import {eq} from "drizzle-orm";
-import {DatabaseOperationError} from "@/src/entities/errors/common";
+import {DatabaseOperationError} from "@/core/entities/errors/common";
+import {IUsersRepository} from "@/core/ports/user.interface";
 
 @injectable()
 export class UsersRepository implements IUsersRepository {

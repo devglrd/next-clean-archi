@@ -1,13 +1,12 @@
 "use server";
 
 import {createServerAction} from "zsa";
-import {signUpController} from "@/src/controller/auth/sign-up.controller";
 import {signInSchema, signUpSchema} from "@/app/(auth)/schema";
-import {signInController} from "@/src/controller/auth/sign-in.controller";
-import {Cookie} from "@/src/entities/models/cookie";
-import {InputParseError} from "@/src/entities/errors/common";
+import {Cookie} from "@/core/entities/models/cookie";
+import {InputParseError} from "@/core/entities/errors/common";
 import {cookies} from "next/headers";
-import {AuthenticationError} from "@/src/entities/errors/auth";
+import {AuthenticationError} from "@/core/entities/errors/auth";
+import {signInController, signUpController} from "@/core/controller/auth.controller";
 
 export const signUpAction = createServerAction()
     .input(signUpSchema)

@@ -83,7 +83,7 @@ export default function Todos() {
                                     <FormControl>
                                         <Input
                                             type={'text'}
-                                            placeholder="Username" {...field} />
+                                            placeholder="" {...field} />
 
                                     </FormControl>
                                     <FormMessage/>

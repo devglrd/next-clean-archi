@@ -1,6 +1,6 @@
-import {IAuthenticationService} from "@/src/application/services/authentication.interface";
-import {ITodosRepository} from "@/src/application/repositories/todo.interface";
-import {IUsersRepository} from "@/src/application/repositories/user.interface";
+import {IAuthenticationService} from "@/core/ports/auth.interface";
+import {ITodosRepository} from "@/core/ports/todo.interface";
+import {IUsersRepository} from "@/core/ports/user.interface";
 
 export const DI_SYMBOLS = {
     // Services

@@ -1,7 +1,7 @@
 import {ContainerModule, interfaces} from "inversify";
-import {ITodosRepository} from "@/src/application/repositories/todo.interface";
 import {DI_SYMBOLS} from "@/di/types";
-import {TodosRepository} from "@/src/infrastructure/repositories/todo.repository";
+import {ITodosRepository} from "@/core/ports/todo.interface";
+import {TodosRepository} from "@/core/adapters/todo.gateway";
 
 const initializeModule = (bind: interfaces.Bind) => {
     bind<ITodosRepository>(DI_SYMBOLS.ITodosRepository).to(TodosRepository);

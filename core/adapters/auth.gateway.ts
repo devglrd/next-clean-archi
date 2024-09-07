@@ -1,14 +1,14 @@
 import {inject, injectable} from "inversify";
-import {IAuthenticationService} from "@/src/application/services/authentication.interface";
 import {generateIdFromEntropySize, Lucia} from "lucia";
-import {Session, sessionSchema} from "@/src/entities/models/session";
-import {Cookie} from "@/src/entities/models/cookie";
-import {User} from "@/src/entities/models/user";
+import {Session, sessionSchema} from "@/core/entities/models/session";
+import {Cookie} from "@/core/entities/models/cookie";
+import {User} from "@/core/entities/models/user";
 import {DI_SYMBOLS} from "@/di/types";
-import {type IUsersRepository} from "@/src/application/repositories/user.interface";
 import {luciaAdapter} from "@/drizzle";
 import {SESSION_COOKIE} from "@/config";
-import {UnauthenticatedError} from "@/src/entities/errors/auth";
+import {UnauthenticatedError} from "@/core/entities/errors/auth";
+import {IAuthenticationService} from "@/core/ports/authentication.interface";
+import { type IUsersRepository} from "@/core/ports/user.interface";
 
 @injectable()
 export class AuthenticationService implements IAuthenticationService {

@@ -1,7 +1,7 @@
 import {ContainerModule, interfaces} from "inversify";
-import {IAuthenticationService} from "@/src/application/services/authentication.interface";
-import {AuthenticationService} from "@/src/infrastructure/services/auth.service";
 import {DI_SYMBOLS} from "@/di/types";
+import {IAuthenticationService} from "@/core/ports/authentication.interface";
+import {AuthenticationService} from "@/core/adapters/auth.gateway";
 
 const initializeModule = (bind: interfaces.Bind) => {
     bind<IAuthenticationService>(DI_SYMBOLS.IAuthenticationService).to(AuthenticationService);

@@ -4,13 +4,12 @@ import {createServerAction} from "zsa";
 import {cookies} from "next/headers";
 import {SESSION_COOKIE} from "@/config";
 import {redirect} from "next/navigation";
-import {getTodosController} from "@/src/controller/todos/get-todos.controller";
 import {addTodosSchema, toggleTodoSchema} from "@/app/todos/schema";
-import {toggleTodoController} from "@/src/controller/todos/toggle-todo.controller";
 import {revalidatePath} from "next/cache";
-import {addTodoController} from "@/src/controller/todos/add-todos.controller";
+import {addTodoController, getTodosController, toggleTodoController} from "@/core/controller/todo.controller";
 
-export const getTodos = createServerAction().handler(async () => {
+export const getTodos = createServerAction()
+    .handler(async () => {
     const sessionId = cookies().get(SESSION_COOKIE)?.value;
 
     if (!sessionId) {
